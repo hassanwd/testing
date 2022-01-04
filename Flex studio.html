@@ -1,0 +1,2452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex studio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        #sidebar{
+            width: 20%;
+            height: 100vh;
+            position:fixed;
+            top: 0;
+            background-color: #d28c88;
+        }
+        .icon-cstm{
+            color: white;
+            margin-top: 4vh;
+            margin-left: 3vh;
+            font-size: 15px;
+        }
+        .logo{
+         /* background-size: cover; */
+         height:18vh;
+         width: 33vh;
+         margin-left: 3%;
+         /* background-color: red; */
+         margin-top: 20px;
+        }
+        .logo img{
+         width: 90%;
+         height: 17vh;
+         }
+         #nav{
+             width: 80%;
+             height: 42vh;
+             margin-left: 12px;
+             /* background-color: red; */
+         }
+         #nav ul{
+             list-style: none;
+         }
+         #nav ul li{
+             margin-top: 2vh;
+             font-size: 13px;
+             /* list-style: none; */
+         }
+         #nav ul li a{
+             text-decoration: none;
+             color: white;
+         }
+         #icon{
+             width: 100%;
+             height: 5vh;
+             margin-left: 9px;
+             padding: 1px;
+             /* background-color: red; */
+         }
+         #icon-a i{
+             color: white;
+             font-size: 15px;
+             margin-left: 1vh;
+         }
+         #para{
+             width: 60%;
+             height: 8vh;
+             margin-left: 2vh;
+             /* background-color: red; */
+         }
+         #para p{
+             font-size: 13px;
+             color: white;
+         }
+         #back{
+             background-image: url(./images/contect.jpg02.jpg);
+             background-size: cover;
+             width:80% ;
+             height: 93vh;
+             /* margin-top: -100vh; */
+             margin-left: 20%;
+         }
+         #upper{
+             width: 80%;
+             height: 5vh;
+             background-color: #f7f6f4;
+             margin-left: 20%;
+             padding: 1px;
+
+         }
+         #upper p{
+             margin-left: 40%;
+             margin-top: -2.5vh;
+         } 
+         .icon{
+             margin-left: 38%;
+             margin-top: 1.5vh;
+
+         }
+         #box{
+             width: 80%;
+             height: 175vh;
+             margin-left: 20%;
+             margin-top: -10vh;
+             padding: 1px;
+             background-color: #f7f6f4;
+         }
+         #box-head{
+             font-size: 21px;
+             color: rgb(70, 69, 69);
+             margin-left: 28%;
+             margin-top: 6vh;
+         }
+         #box1{
+             width:30%;
+             height: 8vh;
+             /* background-color: pink; */
+             margin-left: 35%;
+         }
+         #box hr{
+             width: 18%;
+             height: 0.1px;
+             border: none;
+             background-color: rgb(206, 6, 6);
+             margin-left: 39%;
+             margin-top: 2vh;
+
+         }
+         #gallery-main{
+             width: 90%;
+             height: 120vh;
+             padding: 1px;
+             /* background-color: pink; */
+             margin-top: 3vh;
+             margin-left: 10vh;
+         }
+       #gallery-a{
+           width: 23%;
+           height: 37vh;
+           padding: 1px;
+           margin-top: 2vh;
+           margin-left:  2vh;
+           display: inline-block;
+           /* background-color: turquoise; */
+       }
+       #gallery-a1{
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop195_1600x.jpg);
+           background-size: cover;
+       }  
+       #gallery-a1:hover{
+           opacity: 0.5;
+       }
+       #a1-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a1:hover #a1-image button{
+           visibility: visible;
+       }
+       #a1-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #a1{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a1 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/contect.jpg04\ \(3\).jpg);
+           background-size: cover;
+       }  
+       #a2{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a2 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2:hover{
+           opacity: 0.5;
+       }
+       #a2-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a2:hover #a2-image button{
+           visibility: visible;
+       }
+       #a2-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #gallery-a3  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/webcicadas_1600x.jpg);
+           background-size: cover;
+       }  
+       #a3{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a3 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a3:hover{
+           opacity: 0.5;
+       }
+       #a3-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a3:hover #a3-image button{
+           visibility: visible;
+       }
+       #a3-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a4  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop149_1600x.jpg);
+           background-size: cover;
+       }  
+       #a4{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a4 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a4:hover{
+           opacity: 0.5;
+       }
+       #a4-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a4:hover #a4-image button{
+           visibility: visible;
+       }
+       #a4-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a5  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop127_1600x.jpg);
+           background-size: cover;
+       }  
+       #a5{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a5 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a5:hover{
+           opacity: 0.5;
+       }
+       #a5-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a5:hover #a5-image button{
+           visibility: visible;
+       }
+       #a5-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a6  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop189_1600x.jpg);
+           background-size: cover;
+       }  
+       #a6{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a6 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a6:hover{
+           opacity: 0.5;
+       }
+       #a6-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a6:hover #a6-image button{
+           visibility: visible;
+       }
+       #a6-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a7  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop177_1600x.jpg);
+           background-size: cover;
+       }  
+       #a7{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a7 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a7:hover{
+           opacity: 0.5;
+       }
+       #a7-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a7:hover #a7-image button{
+           visibility: visible;
+       }
+       #a7-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a8  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/wake1_1600x.jpg);
+           background-size: cover;
+       }  
+       #a8{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a8 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a8:hover{
+           opacity: 0.5;
+       }
+       #a8-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a8:hover #a8-image button{
+           visibility: visible;
+       }
+       #a8-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a9  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/webss21_1600x.jpg);
+           background-size: cover;
+       }  
+       #a9{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a9 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a9:hover{
+           opacity: 0.5;
+       }
+       #a9-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a9:hover #a9-image button{
+           visibility: visible;
+       }
+       #a9-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a10  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop110_1600x.jpg);
+           background-size: cover;
+       }  
+       #a10{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a10 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a10:hover{
+           opacity: 0.5;
+       }
+       #a10-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a10:hover #a10-image button{
+           visibility: visible;
+       }
+       #a10-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a11  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop707_1600x.jpg);
+           background-size: cover;
+       }  
+       #a11{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a11 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a11:hover{
+           opacity: 0.5;
+       }
+       #a11-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a11:hover #a11-image button{
+           visibility: visible;
+       }
+       #a11-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a12  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop217_1600x.jpg);
+           background-size: cover;
+       }  
+       #a12{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a12 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a12:hover{
+           opacity: 0.5;
+       }
+       #a12-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a12:hover #a12-image button{
+           visibility: visible;
+       }
+       #a12-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #statement{
+           width: 100%;
+           height: 50vh;
+           /* background-color: red; */
+       }
+       #statement h2{
+           color: red;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           margin-left: 40%;
+           font-size: 30px;
+           margin-top: 5vh;
+      }
+      #state-a{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 8%;
+          margin-top: 2vh;
+          /* background-color: red; */
+      }
+      #state-b{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 51%;
+          margin-top: -20vh;
+          /* background-color: red; */
+      }
+      #state-a p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-a span{
+          margin-top: 8vh;
+      }
+      #state-b p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-b span{
+          margin-top: 2vh;
+      }
+      #move{
+          width: 65%;
+          margin-left: 30%;
+          height: 30vh;
+          margin-top: 10vh;
+          /* background-color: red; */
+      }
+      #move1{
+          width: 30%;
+          overflow-x: hidden;
+          margin-left: 2vh;
+          height: 30vh;
+          border: 1px solid red;
+          display: inline-block;
+      }
+      #end{
+          width: 60%;
+          height: 50vh;
+          margin-left: 30%;
+      }
+      #move1 img{
+          width: 100%;
+          height:20vh;
+          background-size: cover;
+      }
+      #move1 h5{
+          margin-left: 3vh;
+          font-size: 15px;
+          margin-top: 2vh;
+      }
+      #move1 img:hover{
+          width: 110%;
+      }
+      #move1 p{
+          margin-left: 3vh;
+          line-height: 3vh;
+      }
+      #end img{
+          width: 30vh;
+         margin-left: 50vh;
+         margin-top: 5vh;
+      }
+      #end-a{
+          width: 57%;
+          margin-left: 25%;
+          height: 8vh;
+          margin-top: 2vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      }
+      #end-b{
+          width: 57%;
+          margin-left: 25%;
+          height: 8vh;
+          margin-top: 4vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      }
+      #end span{
+          color: red;
+          cursor: pointer;
+      }
+      #circle{
+          width: 5vh;
+          height: 5vh;
+          padding: 1px;
+          color: white;
+          margin-left: 27vh;
+          border-radius: 50%;
+          text-align: center;
+          background-color: #947f5b;
+      }
+      #circle div{
+          margin-top: 35%;
+          font-size: 10px;
+      }
+  
+
+
+
+
+         @media screen and (max-width:1440px){
+            *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        #sidebar{
+            width: 20%;
+            height: 100vh;
+            position:fixed;
+            top: 0;
+            background-color: #d28c88;
+        }
+        .icon-cstm{
+            color: white;
+            margin-top: 4vh;
+            margin-left: 3vh;
+            font-size: 15px;
+        }
+        .logo{
+         /* background-size: cover; */
+         height:18vh;
+         width: 33vh;
+         margin-left: 3%;
+         /* background-color: red; */
+         margin-top: 20px;
+        }
+        .logo img{
+         width: 90%;
+         height: 17vh;
+         }
+         #nav{
+             width: 80%;
+             height: 42vh;
+             margin-left: 12px;
+             /* background-color: red; */
+         }
+         #nav ul{
+             list-style: none;
+         }
+         #nav ul li{
+             margin-top: 2vh;
+             font-size: 13px;
+             /* list-style: none; */
+         }
+         #nav ul li a{
+             text-decoration: none;
+             color: white;
+         }
+         #icon{
+             width: 100%;
+             height: 5vh;
+             margin-left: 9px;
+             padding: 1px;
+             /* background-color: red; */
+         }
+         #icon-a i{
+             color: white;
+             font-size: 15px;
+             margin-left: 1vh;
+         }
+         #para{
+             width: 60%;
+             height: 8vh;
+             margin-left: 2vh;
+             /* background-color: red; */
+         }
+         #para p{
+             font-size: 13px;
+             color: white;
+         }
+         #back{
+             background-image: url(./images/contect.jpg02.jpg);
+             background-size: cover;
+             width:75% ;
+             height: 73vh;
+             /* margin-top: -100vh; */
+             margin-left: 20%;
+         }
+         #upper{
+             width: 80%;
+             height: 5vh;
+             background-color: #f7f6f4;
+             margin-left: 20%;
+             padding: 1px;
+
+         }
+         #upper p{
+             margin-left: 40%;
+             margin-top: -2.5vh;
+         } 
+         .icon{
+             margin-left: 38%;
+             margin-top: 1.5vh;
+
+         }
+         #box{
+             width: 80%;
+             height: 175vh;
+             margin-left: 20%;
+             margin-top: -10vh;
+             padding: 1px;
+             background-color: #f7f6f4;
+         }
+         #box-head{
+             font-size: 21px;
+             color: rgb(70, 69, 69);
+             margin-left: 28%;
+             margin-top: 6vh;
+         }
+         #box1{
+             width:30%;
+             height: 8vh;
+             /* background-color: pink; */
+             margin-left: 35%;
+         }
+         #box hr{
+             width: 18%;
+             height: 0.1px;
+             border: none;
+             background-color: rgb(206, 6, 6);
+             margin-left: 39%;
+             margin-top: 2vh;
+
+         }
+         #gallery-main{
+             width: 90%;
+             height: 120vh;
+             padding: 1px;
+             /* background-color: pink; */
+             margin-top: 3vh;
+             margin-left: 10vh;
+         }
+       #gallery-a{
+           width: 23%;
+           height: 37vh;
+           padding: 1px;
+           margin-top: 2vh;
+           margin-left:  2vh;
+           display: inline-block;
+           /* background-color: turquoise; */
+       }
+       #gallery-a1{
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop195_1600x.jpg);
+           background-size: cover;
+       }  
+       #gallery-a1:hover{
+           opacity: 0.5;
+       }
+       #a1-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a1:hover #a1-image button{
+           visibility: visible;
+       }
+       #a1-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #a1{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a1 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/contect.jpg04\ \(3\).jpg);
+           background-size: cover;
+       }  
+       #a2{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a2 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2:hover{
+           opacity: 0.5;
+       }
+       #a2-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a2:hover #a2-image button{
+           visibility: visible;
+       }
+       #a2-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #gallery-a3  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/webcicadas_1600x.jpg);
+           background-size: cover;
+       }  
+       #a3{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a3 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a3:hover{
+           opacity: 0.5;
+       }
+       #a3-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a3:hover #a3-image button{
+           visibility: visible;
+       }
+       #a3-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a4  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop149_1600x.jpg);
+           background-size: cover;
+       }  
+       #a4{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a4 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a4:hover{
+           opacity: 0.5;
+       }
+       #a4-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a4:hover #a4-image button{
+           visibility: visible;
+       }
+       #a4-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a5  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop127_1600x.jpg);
+           background-size: cover;
+       }  
+       #a5{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a5 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a5:hover{
+           opacity: 0.5;
+       }
+       #a5-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a5:hover #a5-image button{
+           visibility: visible;
+       }
+       #a5-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a6  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop189_1600x.jpg);
+           background-size: cover;
+       }  
+       #a6{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a6 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a6:hover{
+           opacity: 0.5;
+       }
+       #a6-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a6:hover #a6-image button{
+           visibility: visible;
+       }
+       #a6-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a7  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop177_1600x.jpg);
+           background-size: cover;
+       }  
+       #a7{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a7 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a7:hover{
+           opacity: 0.5;
+       }
+       #a7-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a7:hover #a7-image button{
+           visibility: visible;
+       }
+       #a7-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a8  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/wake1_1600x.jpg);
+           background-size: cover;
+       }  
+       #a8{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a8 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a8:hover{
+           opacity: 0.5;
+       }
+       #a8-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a8:hover #a8-image button{
+           visibility: visible;
+       }
+       #a8-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a9  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/webss21_1600x.jpg);
+           background-size: cover;
+       }  
+       #a9{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a9 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a9:hover{
+           opacity: 0.5;
+       }
+       #a9-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a9:hover #a9-image button{
+           visibility: visible;
+       }
+       #a9-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a10  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop110_1600x.jpg);
+           background-size: cover;
+       }  
+       #a10{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a10 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a10:hover{
+           opacity: 0.5;
+       }
+       #a10-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a10:hover #a10-image button{
+           visibility: visible;
+       }
+       #a10-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a11  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop707_1600x.jpg);
+           background-size: cover;
+       }  
+       #a11{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a11 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a11:hover{
+           opacity: 0.5;
+       }
+       #a11-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a11:hover #a11-image button{
+           visibility: visible;
+       }
+       #a11-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a12  {
+           width: 100%;
+           height: 28vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop217_1600x.jpg);
+           background-size: cover;
+       }  
+       #a12{
+           margin-left: 9vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a12 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a12:hover{
+           opacity: 0.5;
+       }
+       #a12-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a12:hover #a12-image button{
+           visibility: visible;
+       }
+       #a12-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #statement{
+           width: 100%;
+           height: 50vh;
+           /* background-color: red; */
+       }
+       #statement h2{
+           color: red;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           margin-left: 40%;
+           font-size: 30px;
+           margin-top: 5vh;
+      }
+      #state-a{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 8%;
+          margin-top: 2vh;
+          /* background-color: red; */
+      }
+      #state-b{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 51%;
+          margin-top: -20vh;
+          /* background-color: red; */
+      }
+      #state-a p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-a span{
+          margin-top: 8vh;
+      }
+      #state-b p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-b span{
+          margin-top: 2vh;
+      }
+      #move{
+          width: 65%;
+          margin-left: 30%;
+          height: 30vh;
+          margin-top: 10vh;
+          /* background-color: red; */
+      }
+      #move1{
+          width: 30%;
+          overflow-x: hidden;
+          margin-left: 2vh;
+          height: 30vh;
+          border: 1px solid red;
+          display: inline-block;
+      }
+      #end{
+          width: 60%;
+          height: 50vh;
+          margin-left: 30%;
+      }
+      #move1 img{
+          width: 100%;
+          height:20vh;
+          background-size: cover;
+      }
+      #move1 h5{
+          margin-left: 3vh;
+          font-size: 15px;
+          margin-top: 2vh;
+      }
+      #move1 img:hover{
+          width: 110%;
+      }
+      #move1 p{
+          margin-left: 3vh;
+          line-height: 3vh;
+      }
+      #end img{
+          width: 30vh;
+         margin-left: 50vh;
+         margin-top: 5vh;
+      }
+      #end-a{
+          width: 57%;
+          margin-left: 25%;
+          height: 8vh;
+          margin-top: 2vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      }
+      #end-b{
+          width: 57%;
+          margin-left: 25%;
+          height: 8vh;
+          margin-top: 4vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      }
+      #end span{
+          color: red;
+          cursor: pointer;
+      }
+      #circle{
+          width: 5vh;
+          height: 5vh;
+          padding: 1px;
+          color: white;
+          margin-left: 27vh;
+          border-radius: 50%;
+          text-align: center;
+          background-color: #947f5b;
+      }
+      #circle div{
+          margin-top: 35%;
+          font-size: 10px;
+      }           
+         }
+
+
+
+      @media screen and (max-width:1024px){
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        #sidebar{
+            width: 20%;
+            height: 100vh;
+            position:fixed;
+            top: 0;
+            background-color: #d28c88;
+        }
+        .icon-cstm{
+            color: white;
+            margin-top: 4vh;
+            margin-left: 3vh;
+            font-size: 15px;
+        }
+        .logo{
+         /* background-size: cover; */
+         height:10vh;
+         width: 18vh;
+         margin-left: 10%;
+         /* background-color: red; */
+         margin-top: 25px;
+        }
+        .logo img{
+         width: 80%;
+         height: 9vh;
+         }
+         #nav{
+             width: 80%;
+             height: 42vh;
+             margin-left: 22px;
+             /* background-color: red; */
+         }
+         #nav ul{
+             list-style: none;
+         }
+         #nav ul li{
+             margin-top: 2vh;
+             font-size: 18px;
+             /* list-style: none; */
+         }
+         #nav ul li a{
+             text-decoration: none;
+             color: white;
+         }
+         #icon{
+             width: 70%;
+             height: 7vh;
+             line-height: 3vh;
+             margin-left: 11px;
+             padding: 1px;
+             margin-top: 3vh;
+             /* background-color: red; */
+         }
+         #icon-a i{
+             color: white;
+             font-size: 15px;
+             margin-left: 1vh;
+         }
+         #para{
+             width: 80%;
+             height: 8vh;
+             margin-left: 2vh;
+             margin-top: 2vh;
+             /* background-color: red; */
+         }
+         #para p{
+             font-size: 16px;
+             color: white;
+         }
+         #back{
+             background-image: url(./images/contect.jpg02.jpg);
+             background-size: cover;
+             width:80% ;
+             height: 53vh;
+             /* margin-top: -100vh; */
+             margin-left: 20%;
+         }
+         #upper{
+             width: 100%;
+             height: 5vh;
+             background-color: #f7f6f4;
+             margin-left: 9%;
+             padding: 1px;
+
+         }
+         #upper p{
+             margin-left: 37%;
+             margin-top: -2vh;
+         } 
+         .icon{
+             margin-left: 35%;
+             margin-top: 1vh;
+
+         }
+         #box{
+             width: 80%;
+             height: 154vh;
+             margin-left: 20%;
+             margin-top: 0vh;
+             padding: 1px;
+             background-color: #f7f6f4;
+         }
+         #box-head{
+             font-size: 21px;
+             color: rgb(70, 69, 69);
+             margin-left: 22%;
+             margin-top: 6vh;
+         }
+         #box1{
+             width:30%;
+             height: 8vh;
+             /* background-color: pink; */
+             margin-left: 35%;
+         }
+         #box hr{
+             width: 18%;
+             height: 0.2px;
+             border: none;
+             background-color: rgb(206, 6, 6);
+             margin-left: 39%;
+             margin-top: 2vh;
+
+         }
+         #gallery-main{
+             width: 90%;
+             height: 120vh;
+             padding: 1px;
+             /* background-color: pink; */
+             margin-top: 3vh;
+             margin-left: 5vh;
+         }
+       #gallery-a{
+           width: 23%;
+           height: 27vh;
+           padding: 1px;
+           margin-top: 2vh;
+           margin-left:  1vh;
+           display: inline-block;
+           /* background-color: turquoise; */
+       }
+       #gallery-a1{
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop195_1600x.jpg);
+           background-size: cover;
+       }  
+       #gallery-a1:hover{
+           opacity: 0.5;
+       }
+       #a1-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a1:hover #a1-image button{
+           visibility: visible;
+       }
+       #a1-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #a1{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a1 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/contect.jpg04\ \(3\).jpg);
+           background-size: cover;
+       }  
+       #a2{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a2 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a2:hover{
+           opacity: 0.5;
+       }
+       #a2-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a2:hover #a2-image button{
+           visibility: visible;
+       }
+       #a2-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #gallery-a3  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/webcicadas_1600x.jpg);
+           background-size: cover;
+       }  
+       #a3{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a3 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a3:hover{
+           opacity: 0.5;
+       }
+       #a3-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a3:hover #a3-image button{
+           visibility: visible;
+       }
+       #a3-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a4  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop149_1600x.jpg);
+           background-size: cover;
+       }  
+       #a4{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a4 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a4:hover{
+           opacity: 0.5;
+       }
+       #a4-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a4:hover #a4-image button{
+           visibility: visible;
+       }
+       #a4-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a5  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop127_1600x.jpg);
+           background-size: cover;
+       }  
+       #a5{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a5 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a5:hover{
+           opacity: 0.5;
+       }
+       #a5-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a5:hover #a5-image button{
+           visibility: visible;
+       }
+       #a5-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a6  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop189_1600x.jpg);
+           background-size: cover;
+       }  
+       #a6{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a6 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a6:hover{
+           opacity: 0.5;
+       }
+       #a6-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a6:hover #a6-image button{
+           visibility: visible;
+       }
+       #a6-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a7  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop177_1600x.jpg);
+           background-size: cover;
+       }  
+       #a7{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a7 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a7:hover{
+           opacity: 0.5;
+       }
+       #a7-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a7:hover #a7-image button{
+           visibility: visible;
+       }
+       #a7-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a8  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/wake1_1600x.jpg);
+           background-size: cover;
+       }  
+       #a8{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a8 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a8:hover{
+           opacity: 0.5;
+       }
+       #a8-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a8:hover #a8-image button{
+           visibility: visible;
+       }
+       #a8-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a9  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/webss21_1600x.jpg);
+           background-size: cover;
+       }  
+       #a9{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a9 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a9:hover{
+           opacity: 0.5;
+       }
+       #a9-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a9:hover #a9-image button{
+           visibility: visible;
+       }
+       #a9-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a10  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop110_1600x.jpg);
+           background-size: cover;
+       }  
+       #a10{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a10 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a10:hover{
+           opacity: 0.5;
+       }
+       #a10-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a10:hover #a10-image button{
+           visibility: visible;
+       }
+       #a10-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a11  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop707_1600x.jpg);
+           background-size: cover;
+       }  
+       #a11{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a11 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a11:hover{
+           opacity: 0.5;
+       }
+       #a11-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 40%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a11:hover #a11-image button{
+           visibility: visible;
+       }
+       #a11-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       }
+       #gallery-a12  {
+           width: 100%;
+           height: 20vh;
+           background-position-y: 40%;
+           background-image: url(./images/shop217_1600x.jpg);
+           background-size: cover;
+       }  
+       #a12{
+           margin-left: 4vh;
+           margin-top: 2vh;
+           font-size: 15px;
+       }
+       #a12 span{
+           color: brown;
+           margin-left: 2vh;
+           font-weight: bold;
+       }
+       #gallery-a12:hover{
+           opacity: 0.5;
+       }
+       #a12-image button{
+           height: 5vh;
+           width: 50%;
+           margin-top: 20%;
+           margin-left: 25%;
+           border-radius: 50px;
+           border: 1px solid black;
+           visibility: hidden;
+
+       }
+       #gallery-a12:hover #a12-image button{
+           visibility: visible;
+       }
+       #a12-image button:hover{
+           background-color: #947f5b;
+           color:white;
+           font-weight: bold;
+           font-size: 2vh;
+
+       } 
+       #statement{
+           width: 100%;
+           height: 40vh;
+           /* background-color: red; */
+       }
+       #statement h2{
+           color: red;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           margin-left: 35%;
+           font-size: 30px;
+           margin-top: -25vh;
+      }
+      #state-a{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 8%;
+          margin-top: 2vh;
+          /* background-color: red; */
+      }
+      #state-b{
+          width: 42%;
+          height: 20vh;
+          line-height: 3vh;
+          margin-left: 51%;
+          margin-top: -20vh;
+          /* background-color: red; */
+      }
+      #state-a p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-a span{
+          margin-top: 8vh;
+      }
+      #state-b p{
+          color: gray;
+          font-size: 15px;
+      }
+      #state-b span{
+          margin-top: 2vh;
+      }
+      #move{
+          width: 75%;
+          margin-left: 24%;
+          height: 30vh;
+          margin-top: 10vh;
+          /* background-color: red; */
+      }
+      #move1{
+          width: 30%;
+          overflow-x: hidden;
+          margin-left: 2vh;
+          height: 30vh;
+          border: 1px solid red;
+          display: inline-block;
+      }
+      #end{
+          width: 60%;
+          height: 50vh;
+          margin-left: 30%;
+      }
+      #move1 img{
+          width: 100%;
+          height:13vh;
+          background-size: cover;
+      }
+      #move1 h5{
+          margin-left: 3vh;
+          font-size: 20px;
+          margin-top: 2vh;
+      }
+      #move1 img:hover{
+          width: 110%;
+      }
+      #move1 p{
+          margin-left: 3vh;
+          line-height: 3vh;
+          font-size: 15px;
+      }
+      #end img{
+          width: 30vh;
+         margin-left: 20vh;
+         margin-top: 5vh;
+      }
+      #end-a{
+          width: 57%;
+          margin-left: 20%;
+          height: 8vh;
+          margin-top: 2vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      }
+      #end-b{
+          width: 57%;
+          margin-left: 20%;
+          height: 8vh;
+          margin-top: 4vh;
+          text-align: center;
+          color: gray;
+          /* background-color: red; */
+      } 
+      #end span{
+          color: red;
+          cursor: pointer;
+      }
+      #circle{
+          width: 5vh;
+          height: 5vh;
+          padding: 1px;
+          color: white;
+          margin-left: 27vh;
+          border-radius: 50%;
+          text-align: center;
+          background-color: #947f5b;
+      }
+      #circle div{
+          margin-top: 35%;
+          font-size: 10px;
+      } 
+      }        
+
+
+
+</style>
+</head>
+<body>
+    <div id="sidebar">
+        <i class="fas fa-shopping-cart icon-cstm"></i>
+        <div class="logo">
+        <img src="./images/studio__logo-white_2000x.png" alt="">
+    </div>
+    
+    <div id="nav">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Art Prints:Flors</a></li>
+            <li><a href="">Art Prints:Fauna</a></li>
+            <li><a href="">Art Prints:MOrdern</a></li>
+            <li><a href="">Orginal Paintings</a></li>
+            <li><a href="">Studio Blog</a></li>
+            <li><a href="">About the Artist</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Buy Flex</a></li>
+        </ul>
+    </div>
+    <div id="icon">
+        <div id="icon-a">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-vimeo-v"></i>
+        <i class="fab fa-pinterest-p"></i>
+        <i class="fab fa-instagram"></i>
+         </div>
+    </div>
+    <div id="para">
+       <p> © 2021 Flex Theme Studio. <br>
+Designed by Out of the Sandbox. <br>
+Powered by Shopify</p>
+    </div>
+    </div>
+    <div id="upper">
+        <i class="fas fa-heart icon"></i>
+       <p> We are still shipping weekly! Hope everyone is staying safe. </p>
+    </div>
+    <div id="back"></div>
+    <div id="box">
+        <div id="box1">
+        <div id="box-head">From  the Gallery</div>
+          <hr> 
+        </div>  
+    <div id="gallery-main">
+        <div id="gallery-a">
+            <div id="gallery-a1">
+                <div id="a1-image"><button>Over View</button></div>
+            </div>
+            <p id="a1"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        <div id="gallery-a">
+            <div id="gallery-a2">
+                <div id="a2-image"><button>Over View</button></div>
+            </div>
+            <p id="a2"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+    
+        <div id="gallery-a">
+            <div id="gallery-a3">
+                <div id="circle"><div>New</div> </div>
+                <div id="a3-image"><button>Over View</button></div>
+            </div>
+            <p id="a3"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        <div id="gallery-a">
+            <div id="gallery-a4">
+                <div id="a4-image"><button>Over View</button></div>
+            </div>
+            <p id="a4"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+    
+        <div id="gallery-a">
+            <div id="gallery-a5">
+                <div id="a5-image"><button>Over View</button></div>
+            </div>
+            <p id="a5"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+    
+        <div id="gallery-a">
+            <div id="gallery-a6">
+                <div id="circle"><div>New</div> </div>
+                <div id="a6-image"><button>Over View</button></div>
+            </div>
+            <p id="a6"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        
+        <div id="gallery-a">
+            <div id="gallery-a7">
+                <div id="a7-image"><button>Over View</button></div>
+            </div>
+            <p id="a7"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        
+        <div id="gallery-a">
+            <div id="gallery-a8">
+                <div id="a8-image"><button>Over View</button></div>
+            </div>
+            <p id="a8"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+    
+        <div id="gallery-a">
+            <div id="gallery-a9">
+                <div id="circle"><div>New</div> </div>
+                <div id="a9-image"><button>Over View</button></div>
+            </div>
+            <p id="a9"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        
+        <div id="gallery-a">
+            <div id="gallery-a10">
+                <div id="a10-image"><button>Over View</button></div>
+            </div>
+            <p id="a10"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+
+        <div id="gallery-a">
+            <div id="gallery-a11">
+                <div id="a11-image"><button>Over View</button></div>
+            </div>
+            <p id="a11"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+
+        <div id="gallery-a">
+            <div id="gallery-a12">
+                <div id="circle"><div>New</div> </div>
+                <div id="a12-image"><button>Over View</button></div>
+            </div>
+            <p id="a12"><span>Trout No.2</span>  <br>
+                from $28.00 CAD</p>
+        </div>
+        </div>
+        <div id="statement">
+            <h2>Artist Statement </h2>
+            <div id="state-a">
+                <p>My work explores the relationship and connection with ourselves and nature. My inspiration forever and always will be the earth – the animals, the water, the flowers, plants, insects, mountains, sky.
+                    <br>
+                   <span> Ever since I was a child I have been fascinated by the beauty of nature. What starts out as something that seems so obvious as the earth, has such a deeper meaning and connection to ourselves as human being – just one type of being and inhabitant on this beautiful planet.</span> </p>
+            </div>
+            <div id="state-b">
+                <p>Throughout my continuous studies and travel adventures, I've been able to find such an appreciation for this planet and its creatures, and slowly but surely, I've been able to capture many parts of it. These experiences have helped me truly hone my craft.
+                      <br>
+                 <span> Please explore my works, if you have any questions about any of the prints or paintings, or just want to have an interesting conversation about any of the topics I explore, please feel free to reach out to the Studio at any time.</span> </p>
+            </div>
+        </div>   
+    </div>
+       <div id="move">
+           <div id="move1">
+               <img src="./images/framing_1600x.jpg" alt="">
+               <h5>Tips on framing prints and paintings</h5>
+               <p>May 14, 2019  1 min read</p>
+           </div>
+           <div id="move1">
+               <img src="./images/post-tools2_1600x.jpg" alt="">
+               <h5>Tips on framing prints and paintings</h5>
+               <p>May 14, 2019  1 min read</p>
+           
+            </div>
+           <div id="move1">
+               <img src="./images/post-101_1600x.jpg" alt="">
+               <h5>Tips on framing prints and paintings</h5>
+               <p>May 14, 2019  1 min read</p>
+           
+            </div>
+       </div>
+       <div id="end">
+           <img src="./images/studio__logo-brown_1600x.png" alt="">
+           <div id="end-a">
+               <p>All the lovely products in this demo shop are courtesy of  artist Sarah Martinez.
+                To purchase, please visit <span> Snoogs + Wilde.</span></p>
+           </div>
+           <div id="end-b">
+               <p>© 2021 <span> Flex Theme Studio. Designed by Out of the Sandbox.</span></p>
+           </div>
+       </div>
+
+       
+</body>
+</html> 
